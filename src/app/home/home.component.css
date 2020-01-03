@@ -9,3 +9,7 @@
 .card {
     margin-bottom: 15px;
 }
+
+.btn-primary {
+    width: 200px;
+}

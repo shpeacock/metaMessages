@@ -12,7 +12,7 @@ export class GithubService {
   constructor(private _http: HttpClient) { }
 
   getCommits() {
-    return this._http.get(`https://api.github.com/repos/shpeacock/particlesFun/commits?`).toPromise()
+    return this._http.get(`https://api.github.com/repos/shpeacock/metaMessages/commits?`).toPromise()
   }
 
 }

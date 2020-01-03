@@ -21,8 +21,13 @@ export class HomeComponent implements OnInit {
     });
   }
 
-  getSrc(url) {
-    return url;
+  //adding this conditional because sometimes the commit won't have an author attribute
+  getSrc(commit) {
+    if (commit.author) {
+      return commit.author.avatar_url;
+    } else {
+      return '../assets/images/catch.png';
+    }
   }
 
 }

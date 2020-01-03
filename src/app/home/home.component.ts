@@ -1,4 +1,4 @@
-import { Component, OnInit } from '@angular/core';
+import { Component, OnInit, Input } from '@angular/core';
 import { GithubService } from '../github.service';
 @Component({
   selector: 'app-home',
@@ -8,6 +8,8 @@ import { GithubService } from '../github.service';
 export class HomeComponent implements OnInit {
   allCommits;
   imgSrc: string;
+  details: boolean = false;
+
   constructor(private _api: GithubService) { }
 
   ngOnInit() {
@@ -17,6 +19,7 @@ export class HomeComponent implements OnInit {
   getCommits() {
     this._api.getCommits().then(output => {
       this.allCommits = output;
+      console.log(output);
     });
   }
 
@@ -29,8 +32,9 @@ export class HomeComponent implements OnInit {
     }
   }
 
-  getDetails(commit) {
-    console.log(commit);
+  getDetails() {
+    console.log(this.details);
+    this.details = !this.details;
   }
 
 }

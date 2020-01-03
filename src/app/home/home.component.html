@@ -1,0 +1,21 @@
+<div class="container main">
+    <h2 class="text-center">Commit History For The Project</h2>
+    <h3 class="text-center">Meta Commit History</h3>
+    <div class="container card-list">
+        <div *ngFor="let commit of allCommits" class="card container">
+            <div class="card-header">
+                Author - {{commit.commit.author.name}}
+            </div>
+            <div class="card-body row">
+                <div class="d-flex flex-column">
+                    <h5 class="p-2">Commit Message...</h5>
+                    <p class="card-text p-2">"{{commit.commit.message}}"</p>
+                    <a [routerLink]="['/details/']" class="btn btn-primary p2">Details</a>
+                </div>
+                <div class="d-flex ml-auto p-2">
+                    <img [src]="getSrc(commit.author.avatar_url)" height="200" width="200">
+                </div>
+            </div>
+        </div>
+    </div>
+</div>

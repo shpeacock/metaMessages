@@ -7,12 +7,12 @@
                 Author - {{commit.commit.author.name}}
             </div>
             <div class="card-body row">
-                <div class="d-flex flex-column">
+                <div class="d-flex flex-column col-sm-8">
                     <h5 class="p-2">Commit Message...</h5>
                     <p class="card-text p-2">"{{commit.commit.message}}"</p>
                     <a [routerLink]="['/details/']" class="btn btn-primary">Details</a>
                 </div>
-                <div class="d-flex ml-auto p-2">
+                <div class="d-flex ml-auto p-2 col-sm-4">
                     <img [src]="getSrc(commit)" height="200" width="200">
                 </div>
             </div>

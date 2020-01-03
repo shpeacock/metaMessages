@@ -17,7 +17,6 @@ export class HomeComponent implements OnInit {
   getCommits() {
     this._api.getCommits().then(output => {
       this.allCommits = output;
-      console.log(output);
     });
   }
 
@@ -28,6 +27,10 @@ export class HomeComponent implements OnInit {
     } else {
       return '../assets/images/catch.png';
     }
+  }
+
+  getDetails(commit) {
+    console.log(commit);
   }
 
 }
